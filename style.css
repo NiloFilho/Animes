@@ -1,0 +1,199 @@
+@font-face {
+    font-family: Cabeça;
+    src: url(fonts/NorthstarHalftoneItalic-ro2p.otf);
+}
+@font-face {
+    font-family: Titulo2;
+    src: url(fonts/Northstar3DItalic-7V9R.otf);
+}
+
+@font-face {
+    font-family: Nija;
+    src: url(fonts/Osake-x3oqj.otf);
+}
+
+@font-face {
+    font-family: rodape;
+    src: url(fonts/LibreBarcode39Text-Regular.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: linear-gradient(to top, transparent, rgb(8, 8, 8));
+    font-family: Cabeça;
+    font-size: 1.5em;
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    color: rgba(255, 0, 0, 0.808);
+    padding: 10px 15px;
+    z-index: 1;
+}
+
+header h1 {
+    animation-name: pulse;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+    margin-left: 50px; 
+    opacity: 0;
+    transform: translateX(350px);
+    font-size: 1.7em;
+}
+
+.menu, a {
+    color: white;
+    text-align: right;  
+    font-family: Nija;  
+    font-size: 1.1em;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: rgba(139, 0, 0, 0.842);
+}
+
+section {
+    width: 100%;
+}
+
+section:nth-of-type(1) {
+    background-image: url(imagens/wallpaper1.jpg);
+    height: 600px;
+    background-position: center bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h2 {
+    text-align: center;
+    font-family: Titulo2;
+    margin: 25px 10px;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.514);
+}
+
+.conteudo p {
+    text-align: justify;
+    padding: 5px 5em;
+    text-indent: 1.8em;
+    font-size: 1.2em;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    padding: 20px;
+    gap: 15px;
+    background-color: black
+
+}
+
+.container img {
+    width: 180px;
+    border: 3px solid rgb(255, 255, 255); 
+}
+
+.container img:hover {
+    animation-name: slide;
+    animation-duration: .3s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 2;
+}
+
+h3 {
+    color: red;
+    font-family: Titulo2;
+    font-size: 1.7em;
+}
+
+.container p {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;    
+}
+
+footer {
+    background-color: grey;
+    color: white;
+    text-align: right;
+    font-family: rodape;
+    font-size: x-large;
+    padding-right: 5px;    
+}
+
+@keyframes pulse {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        scale: 1.25;
+    }
+}
+
+@keyframes slide {
+    0% {
+        scale: 1;
+    }
+    
+    50% {
+        rotate: 7deg;
+        scale: 1.1;
+    }
+    
+    100% {
+        opacity: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    .menu, a {
+        display: block;
+        text-align: left;  
+        font-family: Nija;  
+        font-size: .9em;
+        text-decoration: none;
+    }
+
+    section:nth-of-type(1) {
+        background-image: url(imagens/wallpaper1.jpg);
+        height: 260px;
+        background-position: center top;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    .conteudo p {
+        text-align: justify;
+        padding: 2px 2em;
+        text-indent: 1.8em;
+        font-size: 1.1em;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, .5fr);
+        padding: 10px;
+        gap: 15px;
+        background-color: black    
+    }
+
+    .container img {
+        width: 120px;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+}
